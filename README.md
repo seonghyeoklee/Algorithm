@@ -1,3 +1,5 @@
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=150&section=header&fontSize=40&animation=fadeIn)
+
 ## 📚 velog 알고리즘 시리즈
 
 - https://velog.io/@shlee327/series/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98  
