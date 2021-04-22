@@ -4,7 +4,11 @@ sys.stdin = open("1-4 대표값/input.txt", "rt")
 n = int(input())
 a = list(map(int, input().split()))
 
-avg = round(sum(a) / n)
+# avg = round(sum(a) / n)
+# python의 round는 round_half_even 방식!
+# 예를들면 round(4.500) = 4 / round(5.500) = 6
+# 따라서  a = a + 0.5 >> a = int(a) 이러한 방식으로 해결!
+avg = int((sum(a) / n) + 0.5)
 
 # 첫번째 풀이
 # min = 100

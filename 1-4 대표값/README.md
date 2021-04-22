@@ -23,7 +23,13 @@ sys.stdin = open("1-4 대표값/input.txt", "rt")
 n = int(input())
 a = list(map(int, input().split()))
 
-avg = round(sum(a) / n)
+# avg = round(sum(a) / n)
+
+# 내용추가
+# python의 round는 round_half_even 방식!
+# 예를들면 round(4.500) = 4 / round(5.500) = 6
+# 따라서  a = a + 0.5 >> a = int(a) 이러한 방식으로 해결!
+avg = int((sum(a) / n) + 0.5)
 
 # 첫번째 풀이
 # min = 100
@@ -65,6 +71,11 @@ print(avg, res)
   - round(number[, ndigits]) 함수는 숫자를 입력받아 반올림해 주는 함수이다.
   - 참고 : [점프 투 파이썬 내장함수(round)](https://wikidocs.net/32#round)
 - #### `enumerate`
+
   - 순서가 있는 자료형(list, set, tuple, dictionary, string)을 입력으로 받아 인덱스 값을 포함하는 enumerate 객체를 리턴
   - 보통 enumerate 함수는 for문과 함께 자주 사용
   - 참고 : [Python 계단밟기 enumerate 함수](https://wikidocs.net/20792)
+
+- #### ❗ **내용추가** (2021.4.22)
+  - python의 round는 round_half_even 방식이다. 예를들면 round(4.500) = 4 / round(5.500) = 6
+  - 값이 정확하게 절반일 경우 짝수로 반올림 하게 된다. 이러한 경우를 해결하기 위하여 0.5를 더해준 뒤 `int`로 변환하는 방식으로 반올림한다.
