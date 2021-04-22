@@ -11,6 +11,8 @@
 ###### 문제출처 : https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8
 
 > #### 🔑 KeyPoint!
+>
+> `round` 함수를 이용하여 소수점을 처리하고 `enumerate` 함수를 사용하여 인덱스 값을 포함하는 enumerate 객체를 리턴받아 문제해결
 
 ### 🔌 Code
 
@@ -23,22 +25,46 @@ a = list(map(int, input().split()))
 
 avg = round(sum(a) / n)
 
-min = 100
-val = 0
+# 첫번째 풀이
+# min = 100
+# val = 0
 
-for i in a:
-    if abs(avg - i) <= min:
-        min = abs(avg - i)
+# for i in a:
+#     if abs(avg - i) <= min:
+#         min = abs(avg - i)
 
-for i in range(len(a)):
-    if abs(avg - a[i]) == min:
-        if val <= a[i]:
-            val = a[i]
+# for i in range(len(a)):
+#     if abs(avg - a[i]) == min:
+#         if val <= a[i]:
+#             val = a[i]
 
-for i in range(len(a)):
-    if a[i] == val:
-        print(avg, i+1)
-        break
+# for i in range(len(a)):
+#     if a[i] == val:
+#         print(avg, i+1)
+#         break
+
+# 두번째 풀이
+min = float('inf')
+for idx, x in enumerate(a):
+    tmp = abs(x-avg)
+
+    if tmp < min:
+        min = tmp
+        score = x
+        res = idx + 1
+    elif tmp == min:
+        if x > score:
+            score = x
+            res = idx + 1
+print(avg, res)
 ```
 
 ### 📃 내용정리
+
+- #### `round`
+  - round(number[, ndigits]) 함수는 숫자를 입력받아 반올림해 주는 함수이다.
+  - 참고 : [점프 투 파이썬 내장함수(round)](https://wikidocs.net/32#round)
+- #### `enumerate`
+  - 순서가 있는 자료형(list, set, tuple, dictionary, string)을 입력으로 받아 인덱스 값을 포함하는 enumerate 객체를 리턴
+  - 보통 enumerate 함수는 for문과 함께 자주 사용
+  - 참고 : [Python 계단밟기 enumerate 함수](https://wikidocs.net/20792)
