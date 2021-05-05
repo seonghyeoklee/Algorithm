@@ -2,20 +2,16 @@ import sys
 sys.stdin = open("2-2 숫자만 추출/input.txt", "rt")
 
 n = input()
-x = ''
+res = 0
+for i in n:
+    # isdecimal : 0 ~ 9 문자열이 int 타입으로 변환 가능한 문자로 구성됐을 때 true 리턴
+    if i.isdecimal():
+        res = res * 10 + int(i)
 
-for i in range(len(n)):
-    if (ord(n[i]) >= 97 and ord(n[i]) <= 122) or (ord(n[i]) >= 65 and ord(n[i]) <= 90):
-        continue
-    else:
-        x += n[i]
-
-x = int(x)
-cnt = 1
-
-for i in range(1, (x + 1) // 2 + 1):
-    if x % i == 0:
+print(res)
+cnt = 0
+for i in range(1, res + 1):
+    if res % i == 0:
         cnt += 1
 
-print(x)
 print(cnt)
