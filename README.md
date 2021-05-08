@@ -18,6 +18,8 @@
 - #### IDE
   - [![VSCode Badge](https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=Visual%20Studio%20Code&logoColor=white)](https://code.visualstudio.com/)
 
-#### 🥉 알고리즘 기초 : 2021.04.20 ~ 현재
+#### 🥉 알고리즘 기초 : 2021.04.20 ~ 2021.05.02
+
+#### 🥉 탐색 && 시뮬레이션 : 2021.05.02 ~ 현재
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=150&section=footer)
