@@ -4,6 +4,7 @@ sys.stdin = open("3-1 이분검색/input.txt", "rt")
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
 a.sort()
+
 lt = 0
 rt = n-1
 
