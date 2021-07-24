@@ -1,4 +1,3 @@
-### 알고리즘 문제풀이 소스를 제공하는 저장소
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=150&section=header&fontSize=40&animation=fadeIn)
 
