@@ -8,7 +8,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("2-4 두 리스트 합치기/input.txt", "rt")
 

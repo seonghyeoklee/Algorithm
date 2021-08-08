@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-6 자릿수의 합/input.txt", "rt")
 

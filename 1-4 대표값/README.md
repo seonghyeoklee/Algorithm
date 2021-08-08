@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-4 대표값/input.txt", "rt")
 

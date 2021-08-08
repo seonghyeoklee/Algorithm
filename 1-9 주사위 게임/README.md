@@ -12,7 +12,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-9 주사위 게임/input.txt", "rt")
 

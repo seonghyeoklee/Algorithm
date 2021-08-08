@@ -17,7 +17,7 @@
 
 ### 🔌 Code
 
-```
+```python
 # 두 자연수 입력
 n, k = map(int, input().split())
 

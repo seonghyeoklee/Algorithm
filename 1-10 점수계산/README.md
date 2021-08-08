@@ -14,7 +14,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-10 점수계산/input.txt", "rt")
 

@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-3 K번째 큰 수/input.txt", "rt")
 

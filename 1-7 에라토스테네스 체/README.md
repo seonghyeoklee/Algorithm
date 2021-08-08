@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-7 에라토스테네스 체/input.txt")
 

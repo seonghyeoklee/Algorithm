@@ -8,7 +8,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("2-5 수들의 합/input.txt", "rt")
 

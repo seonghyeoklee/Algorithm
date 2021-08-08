@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("1-8 뒤집은 소수/input.txt", "rt")
 

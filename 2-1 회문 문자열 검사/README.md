@@ -16,7 +16,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("2-1 회문 문자열 검사/input.txt", "rt")
 

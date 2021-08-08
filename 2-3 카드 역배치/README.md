@@ -8,7 +8,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("2-3 카드 역배치/input.txt", "rt")
 

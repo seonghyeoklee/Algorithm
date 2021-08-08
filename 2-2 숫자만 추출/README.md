@@ -12,7 +12,7 @@
 
 ### 🔌 Code
 
-```
+```python
 import sys
 sys.stdin = open("2-2 숫자만 추출/input.txt", "rt")
 
