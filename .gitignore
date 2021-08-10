@@ -1,4 +1,6 @@
 .vscode
+.idea
+java
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,python,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,python,intellij
