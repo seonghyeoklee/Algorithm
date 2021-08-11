@@ -1,6 +1,6 @@
 package programmers;
 
-class Solution {
+public class WeeklyChallenge1 {
     public long solution(int price, int money, int count) {
         long answer = -1;
         long totalPrice = 0;
@@ -19,8 +19,9 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Solution s = new Solution();
-        Long answer = s.solution(3, 20, 4);
+        WeeklyChallenge1 weeklyChallenge1 = new WeeklyChallenge1();
+        
+        Long answer = weeklyChallenge1.solution(3, 20, 4);
 
         System.out.println("answer = " + answer);
     }
