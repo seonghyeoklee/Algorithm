@@ -4,6 +4,7 @@ java
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,python,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,python,intellij
+java/java.iml
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -276,3 +277,4 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,python,intellij
+# End of https://www.toptal.com/developers/gitignore/api/java,intellij
