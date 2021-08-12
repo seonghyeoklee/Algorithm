@@ -5,15 +5,13 @@ import java.util.Scanner;
 class Main0601 {
     public static int[] solution(int n, int[] arr) {
         for (int i = 0; i < n - 1; i++) {
-            int idx = i;
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[idx]) {
-                    idx = j;
+                if (arr[j] < arr[i]) {
+                    int tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
                 }
             }
-            int tmp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = tmp;
         }
 
         return arr;
