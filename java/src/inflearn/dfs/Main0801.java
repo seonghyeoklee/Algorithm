@@ -8,15 +8,14 @@ class Main0801 {
     static int n, total = 0;
     static boolean flag = false;
 
-    public static void DFS(int L, int sum, int[] arr) {
-        if (flag) {
-            return;
-        }
+    public void DFS(int L, int sum, int[] arr) {
+        if(flag) return;
+
         if (sum > total / 2) {
             return;
         }
         if (L == n) {
-            if (total / 2 == sum) {
+            if ((total - sum) == sum) {
                 answer = "YES";
                 flag = true;
             }
@@ -27,6 +26,7 @@ class Main0801 {
     }
 
     public static void main(String[] args) {
+        Main0801 main = new Main0801();
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
@@ -37,7 +37,7 @@ class Main0801 {
             total += arr[i];
         }
 
-        DFS(0, 0, arr);
+        main.DFS(0, 0, arr);
 
         System.out.println(answer);
     }
