@@ -1,20 +1,20 @@
 package programmers;
 
+import java.util.*;
+
 public class WeeklyChallenge5 {
 
-    static int count;
     static String[] dic = new String[]{"A", "E", "I", "O", "U"};
-    static int[] ch;
-    static int n;
+    static int n = 5;
+    static Set<String> set = new HashSet<>();
 
-    public void DFS(int L) {
+    public void DFS(int L, String tmp) {
         if (L == n + 1) {
-            System.out.println(L);
+            set.add(tmp);
         } else {
+            DFS(L + 1, tmp);
             for (int i = 0; i < dic.length; i++) {
-                for (int j = 0; j < dic.length; j++) {
-                    DFS(L + 1);
-                }
+                DFS(L + 1, tmp + dic[i]);
             }
         }
     }
@@ -22,19 +22,27 @@ public class WeeklyChallenge5 {
     public int solution(String word) {
         int answer = 0;
 
-        ch = new int[n + 1];
-        DFS(1);
+        DFS(1, "");
 
+        List<String> list = new ArrayList<>(set);
+        Collections.sort(list);
+
+        for (String str : list) {
+            if (!str.equals(word)) {
+                answer++;
+            } else {
+                break;
+            }
+        }
         return answer;
     }
 
     public static void main(String[] args) {
         WeeklyChallenge5 weeklyChallenge5 = new WeeklyChallenge5();
 
-        String word = "AAAAE";
+//        String word = "AAAAE";
 //        String word = "I";
-//        String word = "EIO";
-        n = word.length();
+        String word = "EIO";
 
         System.out.println(weeklyChallenge5.solution(word));
     }
