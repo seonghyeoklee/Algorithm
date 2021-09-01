@@ -2,33 +2,42 @@ package inflearn.dfs;
 
 import java.util.Scanner;
 
-class Main0805 {
+class Main0806 {
 
-    static int[] pm;
+    static int[] pm, ch, arr;
     static int n, m;
 
     public void DFS(int L) {
         if (L == m) {
-            for (int x : pm) {
-                System.out.print(x + " ");
+            for (int i = 0; i < pm.length; i++) {
+                System.out.print(pm[i] + " ");
             }
             System.out.println();
         } else {
-            for (int i = 1; i <= n; i++) {
-                pm[L] = i;
-                DFS(L + 1);
+            for (int i = 0; i < n; i++) {
+                if (ch[i] == 0) {
+                    ch[i] = 1;
+                    pm[L] = arr[i];
+                    DFS(L + 1);
+                    ch[i] = 0;
+                }
+
             }
         }
     }
 
-
     public static void main(String[] args) {
-        Main0805 main = new Main0805();
+        Main0806 main = new Main0806();
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
         m = sc.nextInt();
 
+        arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        ch = new int[n];
         pm = new int[m];
 
         main.DFS(0);
