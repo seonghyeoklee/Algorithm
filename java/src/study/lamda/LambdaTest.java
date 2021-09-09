@@ -10,9 +10,15 @@ public class LambdaTest {
         printString.showString("test");
 
         showMyString(printString);
+        PrintString re = returnPrint();
+        re.showString("hello");
     }
 
     public static void showMyString(PrintString printString) {
         printString.showString("test2");
+    }
+
+    public static PrintString returnPrint() {
+        return s -> System.out.println(s + " world");
     }
 }
