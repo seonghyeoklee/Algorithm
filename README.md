@@ -27,7 +27,6 @@
 
 - [문자찾기](https://github.com/seonghyeoklee/Algorithm/blob/java/java/src/inflearn/string/Main0101.java)
 - [대소문자 변환](https://github.com/seonghyeoklee/Algorithm/blob/java/java/src/inflearn/string/Main0102.java)
-- [문장 속 단어](https://github.com/seonghyeoklee/Algorithm/blob/java/java/src/inflearn/string/Main0103.java)
 
 
 
