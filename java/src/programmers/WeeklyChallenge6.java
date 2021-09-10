@@ -4,49 +4,67 @@ import java.util.*;
 
 public class WeeklyChallenge6 {
 
+    class Boxer {
+        int id;
+        int weight;
+        int win;
+        int numGame;
+        int weightCnt;
+        double winRate;
+
+        public Boxer(int id, int weight) {
+            this.id = id;
+            this.weight = weight;
+            this.win = 0;
+            this.numGame = 0;
+            this.weightCnt = 0;
+            this.winRate = 0.0;
+        }
+    }
+
     public int[] solution(int[] weights, String[] head2head) {
         int[] answer = {};
+        int len = weights.length;
 
-        for (int i = 0; i < head2head.length; i++) {
-            double win = 0;
-            double lose = 0;
-
-            int weightCnt = 0;
-
-            for (int j = 0; j < head2head[i].toCharArray().length; j++) {
-                if (i != j) {
-                    char vs = head2head[i].charAt(j);
-
-                    if (vs == 'L') {
-                        lose += 1;
-                    } else if (vs == 'W') {
-
-                        win += 1;
-
-                        int myWeight = weights[i];
-                        int otherWeight = weights[j];
-
-                        //자기보다 무거운 복서를 이긴 횟수
-                        if (myWeight < otherWeight) {
-                            weightCnt += 1;
-                        }
-                    } else {
-                        //무전적
-                    }
-
-                }
-            }
-            double winRate = (win / (win + lose) * 100);
-
-            System.out.println("승: " + win + " / 패: " + lose + " / 승률: " + winRate + " / 무거운 복서를 이긴 횟수:" + weightCnt);
+        List<Boxer> list = new ArrayList<>();
+        for (int i = 0; i < len; i++) {
+            list.add(new Boxer(i + 1, weights[i]));
         }
 
-        //sort condition
-        //1. 전체 승률이 높은 복서 (다른 복서랑 붙어본 적이 없는 복서의 승률은 0%)
-        //2. 승률이 동일한 복서의 번호들 중에서는 자신보다 몸무게가 무거운 복서를 이긴 횟수가 많은 복서의 번호가 앞쪽
-        //3. 자신보다 무거운 복서를 이긴 횟수까지 동일한 복서의 번호들 중에서는 자기 몸무게가 무거운 복서의 번호가 앞쪽
-        //4. 자기 몸무게까지 동일한 복서의 번호들 중에서는 작은 번호가 앞쪽
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (head2head[i].charAt(j) != 'N') {
+                    list.get(i).numGame++;
+                }
 
+                if (head2head[i].charAt(j) == 'W') {
+                    list.get(i).win++;
+                    if (list.get(j).weight > list.get(i).weight) {
+                        list.get(i).weightCnt++;
+                    }
+                }
+            }
+        }
+
+        list.stream().forEach(s-> {
+            if (s.numGame > 0) {
+                s.winRate = (double) s.win / s.numGame * 100;
+            }
+        });
+
+        list.sort((a, b)->{
+            if (a.winRate != b.winRate) {
+                return (b.winRate - a.winRate) > 0 ? 1 : -1;
+            } else if (a.weightCnt != b.weightCnt) {
+                return b.weightCnt - a.weightCnt;
+            } else if (a.weight != b.weight) {
+                return b.weight - a.weight;
+            } else {
+                return a.id - b.id;
+            }
+        });
+
+        answer = list.stream().mapToInt(a -> a.id).toArray();
         return answer;
     }
 
