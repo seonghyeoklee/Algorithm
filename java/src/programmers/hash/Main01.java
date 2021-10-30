@@ -3,11 +3,16 @@ package programmers.hash;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 해시 - 완주하지 못한 선수
+ *
+ * @see <a href="https://programmers.co.kr/learn/courses/30/lessons/42576">프로그래머스</a>
+ * @since 2021.10.30
+ * @author shlee
+ */
 public class Main01 {
-
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-
         Map<String, Integer> map = new HashMap<>();
 
         for (String str : participant) {
