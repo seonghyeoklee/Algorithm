@@ -23,7 +23,9 @@
 
 --- 
 
-### Java
+### Programmers
+- [완주하지 못한 선수](https://github.com/seonghyeoklee/Algorithm/blob/master/java/src/programmers/hash/Main01.java)
+- [전화번호 목록](https://github.com/seonghyeoklee/Algorithm/blob/master/java/src/programmers/hash/Main02.java)
 
 - [문자찾기](https://github.com/seonghyeoklee/Algorithm/blob/java/java/src/inflearn/string/Main0101.java)
 - [대소문자 변환](https://github.com/seonghyeoklee/Algorithm/blob/java/java/src/inflearn/string/Main0102.java)
