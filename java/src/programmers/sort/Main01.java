@@ -22,15 +22,6 @@ public class Main01 {
             this.j = commands[1];
             this.k = commands[2];
         }
-
-        @Override
-        public String toString() {
-            return "Command{" +
-                    "i=" + i +
-                    ", j=" + j +
-                    ", k=" + k +
-                    '}';
-        }
     }
 
     public int[] solution(int[] array, int[][] commands) {
@@ -48,9 +39,7 @@ public class Main01 {
             for (int j = command.i - 1; j < command.j; j++) {
                 newList.add(array[j]);
             }
-
             Collections.sort(newList);
-
             answer[i] = newList.get(command.k - 1);
         }
 
