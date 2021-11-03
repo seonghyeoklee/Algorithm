@@ -4,8 +4,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
+/**
+ * 해시 - 전화번호 목록
+ *
+ * @see <a href="https://programmers.co.kr/learn/courses/30/lessons/42577">프로그래머스</a>
+ * @since 2021.10.30
+ * @author shlee
+ */
 public class Main02 {
-
     public boolean solution(String[] phone_book) {
         boolean answer = true;
         HashSet<String> hashSet = (HashSet<String>) Arrays.stream(phone_book).collect(Collectors.toSet());
